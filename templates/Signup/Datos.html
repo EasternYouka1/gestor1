@@ -1,0 +1,62 @@
+{% extends 'Base.html' %} {% block content %}
+<header>
+  <a href="{% url 'signup' token %}" class="btn btn-secondary">Volver al Menú Anterior</a>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if messages %}
+  {% for m in messages %}
+      <script>
+          Swal.fire({
+          title: "{{m}}",
+
+          icon: "success"
+          });
+
+      </script>
+  {% endfor %}
+   {% endif %}
+<h1 class="mt-3 alert alert-success text-center">Lista de personas</h1>
+<div class="text-end mb-3">
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <span class="input-group-text"> Buscar rut </span> 
+            {{ form.username }}    
+
+            <input type="submit" value="Buscar" class="btn btn-success">
+        </div>
+    </form>
+    <hr>
+</div>
+{%if Usuario %}
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Rut</th>
+      <th>Contrasena</th>
+      <th>Tipo</th>
+
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in Usuario %}
+    <tr>
+      <td>{{ p.username }}</td>
+      <td>{{ p.password }}</td>
+      <td>{{ p.tipo }}</td>
+     
+
+       <td>
+           <a href="/eliminarpersonas/{{ p.username }}" class="btn btn-danger">Eliminar</a>
+           <a href="/editarpersonas/{{ p.username }}" class="btn btn-warning">Editar</a>
+       </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+<div class="alert alert-warning">No existen registros</div>
+</header>
+{% endif %} {% endblock %}

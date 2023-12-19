@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('ruta/de/imagen.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0; /* Add this line to remove default margin */
+        }
+        .card {
+            width: 18rem;
+            margin: 20px;
+        }
+        
+        .site-navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333; /* Change this to your desired background color */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        .site-logo {
+            /* Adjust the logo's style as needed */
+            padding: 10px; /* Add spacing if necessary */
+        }
+    </style>
+</head>
+<header class="site-navbar site-navbar-target py-4 bg-dark" role="banner">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+    {% for m in messages %}
+        <script>
+            Swal.fire({
+            title: "{{m}}",
+
+            icon: "success"
+            });
+
+        </script>
+    {% endfor %}
+     {% endif %}
+
+
+
+    <div class="site-logo">
+      <!--NOMBRE Y LOGO-->
+      <a href="/"><img src="/static/images/logo1.jpg"  width="150" height="150" href="/" ></a>
+
+      
+    </div>
+  </div>
+
+  <div class="col-9  text-right">
+    
+
+
+
+
+  
+  </div>
+
+  
+</div>
+</div>
+</header>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="/static/images/images.png" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Modulo Administracion</h5>
+                    <p class="card-text">Edicion de usuarios del edificio</p>
+                    <a href="Datos" class="btn btn-primary">Ir a Administracion</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="/static/images/images (1).png" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Modulo Estacionamientos</h5>
+                    <p class="card-text">Edicion de autos del estacionamiento</p>
+                    <a href="Datos1" class="btn btn-primary">Ir a Estacionamiento</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="/static/images/worker.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Modulo Trabajadores</h5>
+                    <p class="card-text">Edicion de trabajadores</p>
+                    <a href="signup" class="btn btn-primary">Ir a Trabajadores</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="/static/images/download.jpeg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitudes</h5>
+                    <p class="card-text">Modulo de solicitudes de cambio de contrasena</p>
+                    <a href="Datos3" class="btn btn-primary">Ir A Solicitudes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
